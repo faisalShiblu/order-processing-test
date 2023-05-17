@@ -1,11 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OrderProcessing.Api.Migrations
 {
-    public partial class one2many : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    OrderId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    City = table.Column<string>(nullable: true),
+                    CustomerName = table.Column<string>(nullable: true),
+                    TotalAmount = table.Column<decimal>(nullable: false),
+                    Discount = table.Column<decimal>(nullable: false),
+                    Vat = table.Column<decimal>(nullable: false),
+                    NetAmount = table.Column<decimal>(nullable: false),
+                    OrderDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.OrderId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "OrderItems",
                 columns: table => new
@@ -38,6 +58,9 @@ namespace OrderProcessing.Api.Migrations
         {
             migrationBuilder.DropTable(
                 name: "OrderItems");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
         }
     }
 }

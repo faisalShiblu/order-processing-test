@@ -19,9 +19,24 @@ namespace OrderProcessing.Application
            return _orderRepository.AddOrder(order);
         }
 
+        public int DeleteOrder(int id)
+        {
+            return _orderRepository.DeleteOrder(id);
+        }
+
         public List<Order> GetAllOrders()
         {
             return _orderRepository.GetAllOrders();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return _orderRepository.GetOrderById(id);
+        }
+
+        public Order UpdateOrder(Order order)
+        {
+            return _orderRepository.UpdateOrder(order);
         }
     }
 }

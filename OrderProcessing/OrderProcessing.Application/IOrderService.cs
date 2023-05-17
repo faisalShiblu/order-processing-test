@@ -9,6 +9,9 @@ namespace OrderProcessing.Application
     public interface IOrderService
     {
         List<Order> GetAllOrders();
+        Order GetOrderById(int id);
         Order AddOrder(Order order);
+        Order UpdateOrder(Order order);
+        int DeleteOrder(int id);
     }
 }

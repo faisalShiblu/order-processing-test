@@ -1,4 +1,5 @@
-﻿using OrderProcessing.Application;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderProcessing.Application;
 using OrderProcessing.Domain.Entities;
 using OrderProcessing.Domain.ViewModel;
 using System;
@@ -32,9 +33,34 @@ namespace OrderProcessing.Infrustructure
             return order;
         }
 
+        public int DeleteOrder(int id)
+        {
+            var order = _orderDbContext.Orders.Find(id);
+            if (order != null)
+            {
+                _orderDbContext.Orders.Remove(order);
+                _orderDbContext.SaveChanges();
+
+                return 1;
+            }
+            return 0;
+        }
+
         public List<Order> GetAllOrders()
         {
             return _orderDbContext.Orders.ToList();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return _orderDbContext.Orders.Find(id);
+        }
+
+        public Order UpdateOrder(Order order)
+        {
+            _orderDbContext.Entry(order).State = EntityState.Modified;
+            _orderDbContext.SaveChanges();
+            return order;
         }
     }
 }

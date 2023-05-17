@@ -25,5 +25,9 @@
     <ProjectReference Include="..\OrderProcessing.Infrustructure\OrderProcessing.Infrustructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 </Project>
