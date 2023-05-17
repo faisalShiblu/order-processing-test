@@ -13,6 +13,6 @@ namespace OrderProcessing.Domain.Entities
         public decimal Vat { get; set; }
         public decimal NetAmount { get; set; }
         public DateTime OrderDate { get; set; }
-       // public List<OrderItem> Items { get; set; }
+        public List<OrderItem> Items { get; set; }
     }
 }
