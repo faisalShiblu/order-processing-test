@@ -41,8 +41,7 @@ namespace OrderProcessing.Application
 
         public decimal GetDiscountService(string cityName, decimal grossAmount)
         {
-            decimal discount = 0;
-
+            decimal discount;
             switch (cityName.ToUpper())
             {
                 case "CHATTOGRAM":
