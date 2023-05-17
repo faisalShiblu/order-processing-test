@@ -31,7 +31,12 @@ namespace OrderProcessing.Api
         {
             services.AddControllers();
 
-            services.AddDbContext<OrderDbContext>(opt => 
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
+            services.AddDbContext<OrderDbContext>(opt =>
                     opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly("OrderProcessing.Api")));
             services.AddScoped<IOrderService, OrderService>();
@@ -55,7 +60,8 @@ namespace OrderProcessing.Api
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI(c => {
+                app.UseSwaggerUI(c =>
+                {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Showing API V1");
                 });
 

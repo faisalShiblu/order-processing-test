@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OrderProcessing.Application;
 using OrderProcessing.Domain.Entities;
-using OrderProcessing.Domain.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +32,13 @@ namespace OrderProcessing.Infrustructure
             return order;
         }
 
+        public OrderItem AddOrderItems(OrderItem item)
+        {
+            _orderDbContext.OrderItems.Add(item);
+            _orderDbContext.SaveChanges();
+            return item;
+        }
+
         public int DeleteOrder(int id)
         {
             var order = _orderDbContext.Orders.Find(id);
@@ -44,6 +50,12 @@ namespace OrderProcessing.Infrustructure
                 return 1;
             }
             return 0;
+        }
+
+
+        public List<OrderItem> GetAllOrderItemsByOrderId(int id)
+        {
+            return _orderDbContext.OrderItems.Where(i => i.Order.OrderId == id).ToList();
         }
 
         public List<Order> GetAllOrders()
@@ -61,6 +73,13 @@ namespace OrderProcessing.Infrustructure
             _orderDbContext.Entry(order).State = EntityState.Modified;
             _orderDbContext.SaveChanges();
             return order;
+        }
+
+        public OrderItem UpdateOrderItems(OrderItem item)
+        {
+            _orderDbContext.Entry(item).State = EntityState.Modified;
+            _orderDbContext.SaveChanges();
+            return item;
         }
     }
 }

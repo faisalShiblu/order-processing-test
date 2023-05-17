@@ -1,6 +1,6 @@
-﻿namespace OrderProcessing.Domain.ViewModel
+﻿namespace OrderProcessing.Api.DTO
 {
-    public class OrderItemViewModel
+    public class OrderItemCreateDto
     {
         public string ProductName { get; set; }
         public decimal Price { get; set; }

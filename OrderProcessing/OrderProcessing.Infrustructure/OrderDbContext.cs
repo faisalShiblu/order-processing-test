@@ -15,5 +15,13 @@ namespace OrderProcessing.Infrustructure
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>()
+                .HasMany(p => p.Items)
+                .WithOne(c => c.Order)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }
