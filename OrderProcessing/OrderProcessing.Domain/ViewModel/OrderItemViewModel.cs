@@ -1,8 +1,7 @@
-﻿namespace OrderProcessing.Api.Models
+﻿namespace OrderProcessing.Domain.ViewModel
 {
-    public class OrderItem
+    public class OrderItemViewModel
     {
-        public int OrderItemId { get; set; }
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using OrderProcessing.Api.Models;
-using OrderProcessing.Api.ViewModel;
+using OrderProcessing.Application;
+using OrderProcessing.Domain.Entities;
+using OrderProcessing.Domain.ViewModel;
 
 namespace OrderProcessing.Api.Controllers
 {
@@ -9,6 +10,18 @@ namespace OrderProcessing.Api.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
+        private readonly IOrderService _orderService;
+        public OrderController(IOrderService orderService)
+        {
+            _orderService = orderService;
+        }
+
+        [HttpGet]
+        public IActionResult GetAllOrders()
+        {
+            return Ok(_orderService.GetAllOrders());
+        }
+
 
         [HttpPost]
         public IActionResult ProcessOrder(OrderViewModel order)
@@ -29,24 +42,27 @@ namespace OrderProcessing.Api.Controllers
                     break;
             }
 
+            decimal grossTotalPrice = 1000;
+            //foreach (var item in order.Items)
+            //{
+            //    decimal totalPrice = item.Price * item.Quantity;
+            //    grossTotalPrice += totalPrice;
+            //}
 
             var newOrder = new Order
             {
                 City = order.City,
                 CustomerName = order.CustomerName,
-                Discount = order.TotalAmount * discount,
+                Discount = grossTotalPrice * discount,
                 OrderDate = System.DateTime.Now,
-                Vat = order.TotalAmount * 0.15m,
-                TotalAmount = order.TotalAmount,
-                NetAmount = order.TotalAmount - (order.TotalAmount * discount) + (order.TotalAmount * 0.15m),
-                OrderId = 0
+                Vat = grossTotalPrice * 0.15m,
+                TotalAmount = grossTotalPrice,
+                NetAmount = grossTotalPrice - (grossTotalPrice * discount) + (grossTotalPrice * 0.15m),
+                OrderId = 0,
+               // Items = order.Items
             };
-            // Calculate the total price for each ordered item
 
-            // Process the order and return the result
-            // You can add your own logic here
-
-            return Ok(newOrder);
+            return Ok(_orderService.AddOrder(newOrder));
         }
 
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OrderProcessing.Api.Models
+namespace OrderProcessing.Domain.Entities
 {
     public class Order
     {
@@ -13,6 +13,6 @@ namespace OrderProcessing.Api.Models
         public decimal Vat { get; set; }
         public decimal NetAmount { get; set; }
         public DateTime OrderDate { get; set; }
-     //   public List<OrderItem> Items { get; set; }
+       // public List<OrderItem> Items { get; set; }
     }
 }
