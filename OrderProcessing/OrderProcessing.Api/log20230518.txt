@@ -1,0 +1,789 @@
+2023-05-18 12:27:56.060 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:27:56.363 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:27:56.364 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:27:56.364 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:27:56.393 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:27:57.285 +06:00 [INF] Request finished in 889.4241ms 200 text/html;charset=utf-8
+2023-05-18 12:27:57.291 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:27:57.304 +06:00 [INF] Request finished in 13.9317ms 200 application/javascript; charset=utf-8
+2023-05-18 12:27:57.305 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:27:57.369 +06:00 [INF] Request finished in 64.0348ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:27:57.473 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:27:57.574 +06:00 [INF] Request finished in 100.5371ms 200 application/json;charset=utf-8
+2023-05-18 12:28:06.249 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrders  
+2023-05-18 12:28:06.282 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:28:06.304 +06:00 [INF] Route matched with {action = "Get", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:28:06.859 +06:00 [WRN] No type was specified for the decimal column 'Discount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:28:06.859 +06:00 [WRN] No type was specified for the decimal column 'NetAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:28:06.859 +06:00 [WRN] No type was specified for the decimal column 'TotalAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:28:06.859 +06:00 [WRN] No type was specified for the decimal column 'Vat' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:28:06.859 +06:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:28:06.892 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:28:08.798 +06:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+2023-05-18 12:28:09.012 +06:00 [INF] Executed DbCommand (40ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:28:09.017 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:28:09.018 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:28:09.018 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:28:09.040 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:28:09.043 +06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OrderProcessing.Api.DTO.OrderDto, OrderProcessing.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-18 12:28:09.146 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api) in 2838.2543ms
+2023-05-18 12:28:09.147 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:28:09.148 +06:00 [INF] HTTP GET /api/Order/GetAllOrders responded 200 in 2892.0829 ms
+2023-05-18 12:28:09.151 +06:00 [INF] Request finished in 2903.6504ms 200 application/json; charset=utf-8
+2023-05-18 12:28:46.482 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=5  
+2023-05-18 12:28:46.489 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:28:46.505 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:28:46.544 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:28:46.559 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:28:46.561 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:28:46.562 +06:00 [INF] Executing ObjectResult, writing value of type 'OrderProcessing.Api.DTO.OrderDto'.
+2023-05-18 12:28:46.563 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 57.0112ms
+2023-05-18 12:28:46.563 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:28:46.563 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=5 responded 200 in 76.0527 ms
+2023-05-18 12:28:46.563 +06:00 [INF] Request finished in 81.7765ms 200 application/json; charset=utf-8
+2023-05-18 12:30:46.493 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/SaveOrder application/json-patch+json 228
+2023-05-18 12:30:46.494 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api)'
+2023-05-18 12:30:46.499 +06:00 [INF] Route matched with {action = "Post", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(OrderProcessing.Api.DTO.OrderCreateDto) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:30:46.573 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:30:46.678 +06:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([City], [CustomerName], [Discount], [NetAmount], [OrderDate], [TotalAmount], [Vat])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [OrderId]
+FROM [Orders]
+WHERE @@ROWCOUNT = 1 AND [OrderId] = scope_identity();
+2023-05-18 12:30:46.725 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([OrderId], [Price], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [OrderItemId]
+FROM [OrderItems]
+WHERE @@ROWCOUNT = 1 AND [OrderItemId] = scope_identity();
+2023-05-18 12:30:46.730 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([OrderId], [Price], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [OrderItemId]
+FROM [OrderItems]
+WHERE @@ROWCOUNT = 1 AND [OrderItemId] = scope_identity();
+2023-05-18 12:30:46.736 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-05-18 12:30:46.737 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api) in 237.3597ms
+2023-05-18 12:30:46.737 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api)'
+2023-05-18 12:30:46.737 +06:00 [INF] HTTP POST /api/Order/SaveOrder responded 200 in 243.1408 ms
+2023-05-18 12:30:46.738 +06:00 [INF] Request finished in 245.4441ms 200 
+2023-05-18 12:35:52.811 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrders  
+2023-05-18 12:35:52.817 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:35:52.821 +06:00 [INF] Route matched with {action = "Get", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:35:52.824 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:35:52.903 +06:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+2023-05-18 12:35:52.907 +06:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:35:52.907 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:35:52.908 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:35:52.908 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:35:52.909 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:35:52.910 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:35:52.910 +06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OrderProcessing.Api.DTO.OrderDto, OrderProcessing.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-18 12:35:52.911 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api) in 88.7046ms
+2023-05-18 12:35:52.911 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:35:52.911 +06:00 [INF] HTTP GET /api/Order/GetAllOrders responded 200 in 98.9073 ms
+2023-05-18 12:35:52.911 +06:00 [INF] Request finished in 100.4129ms 200 application/json; charset=utf-8
+2023-05-18 12:36:07.130 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=5  
+2023-05-18 12:36:07.131 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:36:07.132 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:36:07.135 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:36:07.143 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:36:07.145 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:36:07.146 +06:00 [INF] Executing ObjectResult, writing value of type 'OrderProcessing.Api.DTO.OrderDto'.
+2023-05-18 12:36:07.147 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 14.8258ms
+2023-05-18 12:36:07.147 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:36:07.147 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=5 responded 200 in 16.0872 ms
+2023-05-18 12:36:07.147 +06:00 [INF] Request finished in 17.613ms 200 application/json; charset=utf-8
+2023-05-18 12:36:40.658 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/UpdateOrder application/json-patch+json 291
+2023-05-18 12:36:40.659 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Put (OrderProcessing.Api)'
+2023-05-18 12:36:40.667 +06:00 [INF] Route matched with {action = "Put", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Put(OrderProcessing.Api.DTO.OrderUpdateDto) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:36:40.679 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:36:40.682 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:36:40.693 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [City] = @p0, [CustomerName] = @p1, [Discount] = @p2, [NetAmount] = @p3, [OrderDate] = @p4, [TotalAmount] = @p5, [Vat] = @p6
+WHERE [OrderId] = @p7;
+SELECT @@ROWCOUNT;
+2023-05-18 12:36:40.700 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OrderItems] SET [OrderId] = @p0, [Price] = @p1, [ProductName] = @p2, [Quantity] = @p3
+WHERE [OrderItemId] = @p4;
+SELECT @@ROWCOUNT;
+2023-05-18 12:36:40.702 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OrderItems] SET [OrderId] = @p0, [Price] = @p1, [ProductName] = @p2, [Quantity] = @p3
+WHERE [OrderItemId] = @p4;
+SELECT @@ROWCOUNT;
+2023-05-18 12:36:40.704 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-05-18 12:36:40.704 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Put (OrderProcessing.Api) in 36.0553ms
+2023-05-18 12:36:40.704 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Put (OrderProcessing.Api)'
+2023-05-18 12:36:40.704 +06:00 [INF] HTTP POST /api/Order/UpdateOrder responded 200 in 45.2228 ms
+2023-05-18 12:36:40.704 +06:00 [INF] Request finished in 48.219ms 200 
+2023-05-18 12:36:44.659 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=5  
+2023-05-18 12:36:44.661 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:36:44.661 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:36:44.663 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:36:44.669 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:36:44.672 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:36:44.672 +06:00 [INF] Executing ObjectResult, writing value of type 'OrderProcessing.Api.DTO.OrderDto'.
+2023-05-18 12:36:44.674 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 12.3144ms
+2023-05-18 12:36:44.674 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:36:44.674 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=5 responded 200 in 13.6159 ms
+2023-05-18 12:36:44.674 +06:00 [INF] Request finished in 15.5707ms 200 application/json; charset=utf-8
+2023-05-18 12:36:56.282 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/DeleteOrder?id=5  0
+2023-05-18 12:36:56.283 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Delete (OrderProcessing.Api)'
+2023-05-18 12:36:56.288 +06:00 [INF] Route matched with {action = "Delete", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:36:56.292 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:36:56.295 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:36:56.313 +06:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Orders]
+WHERE [OrderId] = @p0;
+SELECT @@ROWCOUNT;
+2023-05-18 12:36:56.359 +06:00 [ERR] An exception occurred in the database while saving changes for context type 'OrderProcessing.Infrustructure.OrderDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_OrderItems_Orders_OrderId". The conflict occurred in database "OrderDB", table "dbo.OrderItems", column 'OrderId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:76329e19-82b9-4aa4-b8f9-819b78a0cd8a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_OrderItems_Orders_OrderId". The conflict occurred in database "OrderDB", table "dbo.OrderItems", column 'OrderId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:76329e19-82b9-4aa4-b8f9-819b78a0cd8a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-05-18 12:36:56.362 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Delete (OrderProcessing.Api) in 73.1417ms
+2023-05-18 12:36:56.363 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Delete (OrderProcessing.Api)'
+2023-05-18 12:36:56.363 +06:00 [ERR] HTTP POST /api/Order/DeleteOrder?id=5 responded 500 in 80.2249 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_OrderItems_Orders_OrderId". The conflict occurred in database "OrderDB", table "dbo.OrderItems", column 'OrderId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:76329e19-82b9-4aa4-b8f9-819b78a0cd8a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at OrderProcessing.Infrustructure.OrderRepository.DeleteOrder(Int32 id) in C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Infrustructure\OrderRepository.cs:line 48
+   at OrderProcessing.Application.OrderService.DeleteOrder(Int32 id) in C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Application\OrderService.cs:line 28
+   at OrderProcessing.Api.Controllers.OrderController.Delete(Int32 id) in C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api\Controllers\OrderController.cs:line 224
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-05-18 12:36:56.404 +06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_OrderItems_Orders_OrderId". The conflict occurred in database "OrderDB", table "dbo.OrderItems", column 'OrderId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:76329e19-82b9-4aa4-b8f9-819b78a0cd8a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at OrderProcessing.Infrustructure.OrderRepository.DeleteOrder(Int32 id) in C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Infrustructure\OrderRepository.cs:line 48
+   at OrderProcessing.Application.OrderService.DeleteOrder(Int32 id) in C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Application\OrderService.cs:line 28
+   at OrderProcessing.Api.Controllers.OrderController.Delete(Int32 id) in C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api\Controllers\OrderController.cs:line 224
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-05-18 12:36:56.413 +06:00 [INF] Request finished in 130.9273ms 500 text/plain
+2023-05-18 12:37:35.741 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:37:35.933 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:37:35.933 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:37:35.933 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:37:35.960 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:37:36.130 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:37:36.130 +06:00 [INF] Request finished in 172.6169ms 200 text/html;charset=utf-8
+2023-05-18 12:37:36.133 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:37:36.133 +06:00 [INF] Request finished in 3.3492ms 200 application/javascript; charset=utf-8
+2023-05-18 12:37:36.155 +06:00 [INF] Request finished in 21.5085ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:37:36.268 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:37:36.435 +06:00 [INF] Request finished in 166.8134ms 200 application/json;charset=utf-8
+2023-05-18 12:37:40.316 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:37:40.503 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:37:40.503 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:37:40.503 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:37:40.522 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:37:40.663 +06:00 [INF] Request finished in 143.4474ms 200 text/html;charset=utf-8
+2023-05-18 12:37:40.665 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:37:40.665 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:37:40.670 +06:00 [INF] Request finished in 4.5907ms 200 application/javascript; charset=utf-8
+2023-05-18 12:37:40.682 +06:00 [INF] Request finished in 16.3655ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:37:40.757 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:37:40.876 +06:00 [INF] Request finished in 119.5262ms 200 application/json;charset=utf-8
+2023-05-18 12:37:53.822 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:37:57.906 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:37:58.119 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:37:58.120 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:37:58.120 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:37:58.139 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:37:58.313 +06:00 [INF] Request finished in 176.8721ms 200 text/html;charset=utf-8
+2023-05-18 12:37:58.330 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:37:58.333 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:37:58.344 +06:00 [INF] Request finished in 13.9923ms 200 application/javascript; charset=utf-8
+2023-05-18 12:37:58.374 +06:00 [INF] Request finished in 41.5782ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:37:58.524 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:37:58.623 +06:00 [INF] Request finished in 99.6217ms 200 application/json;charset=utf-8
+2023-05-18 12:38:02.617 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:38:02.845 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:38:02.846 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:38:02.846 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:38:02.866 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:38:03.030 +06:00 [INF] Request finished in 167.0296ms 200 text/html;charset=utf-8
+2023-05-18 12:38:03.037 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:38:03.044 +06:00 [INF] Request finished in 7.3771ms 200 application/javascript; charset=utf-8
+2023-05-18 12:38:03.045 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:38:03.070 +06:00 [INF] Request finished in 25.4023ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:38:03.166 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:38:03.324 +06:00 [INF] Request finished in 157.3111ms 200 application/json;charset=utf-8
+2023-05-18 12:38:18.478 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:38:18.677 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:38:18.677 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:38:18.677 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:38:18.696 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:38:18.842 +06:00 [INF] Request finished in 149.3382ms 200 text/html;charset=utf-8
+2023-05-18 12:38:18.850 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:38:18.856 +06:00 [INF] Request finished in 5.6129ms 200 application/javascript; charset=utf-8
+2023-05-18 12:38:18.856 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:38:18.880 +06:00 [INF] Request finished in 23.3295ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:38:19.010 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:38:19.128 +06:00 [INF] Request finished in 118.1557ms 200 application/json;charset=utf-8
+2023-05-18 12:38:36.095 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:38:36.419 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:38:36.419 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:38:36.420 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:38:36.458 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:38:36.948 +06:00 [INF] Request finished in 496.395ms 200 text/html;charset=utf-8
+2023-05-18 12:38:37.004 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:38:37.004 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:38:37.011 +06:00 [INF] Request finished in 7.7616ms 200 application/javascript; charset=utf-8
+2023-05-18 12:38:37.071 +06:00 [INF] Request finished in 67.7951ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:38:37.404 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:38:37.732 +06:00 [INF] Request finished in 328.4633ms 200 application/json;charset=utf-8
+2023-05-18 12:38:44.031 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:38:44.256 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:38:44.256 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:38:44.256 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:38:44.277 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:38:44.474 +06:00 [INF] Request finished in 199.0074ms 200 text/html;charset=utf-8
+2023-05-18 12:38:44.477 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:38:44.479 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:38:44.484 +06:00 [INF] Request finished in 6.6638ms 200 application/javascript; charset=utf-8
+2023-05-18 12:38:44.507 +06:00 [INF] Request finished in 27.8173ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:38:44.644 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:38:44.797 +06:00 [INF] Request finished in 152.7533ms 200 application/json;charset=utf-8
+2023-05-18 12:38:53.781 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:38:54.075 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:38:54.075 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:38:54.075 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:38:54.096 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:38:54.291 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:38:54.291 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:38:54.292 +06:00 [INF] Request finished in 198.8054ms 200 text/html;charset=utf-8
+2023-05-18 12:38:54.297 +06:00 [INF] Request finished in 5.2978ms 200 application/javascript; charset=utf-8
+2023-05-18 12:38:54.321 +06:00 [INF] Request finished in 30.0208ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:38:54.453 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:38:54.621 +06:00 [INF] Request finished in 168.1382ms 200 application/json;charset=utf-8
+2023-05-18 12:41:30.301 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:41:30.491 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:41:30.491 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:41:30.491 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:41:30.510 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:41:30.655 +06:00 [INF] Request finished in 147.1063ms 200 text/html;charset=utf-8
+2023-05-18 12:41:30.656 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:41:30.656 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:41:30.659 +06:00 [INF] Request finished in 2.7894ms 200 application/javascript; charset=utf-8
+2023-05-18 12:41:30.681 +06:00 [INF] Request finished in 24.998ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:41:30.802 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:41:30.955 +06:00 [INF] Request finished in 152.9571ms 200 application/json;charset=utf-8
+2023-05-18 12:41:35.458 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:41:35.643 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:41:35.643 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:41:35.643 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:41:35.660 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:41:35.802 +06:00 [INF] Request finished in 143.8107ms 200 text/html;charset=utf-8
+2023-05-18 12:41:35.807 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:41:35.808 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:41:35.811 +06:00 [INF] Request finished in 3.0082ms 200 application/javascript; charset=utf-8
+2023-05-18 12:41:35.823 +06:00 [INF] Request finished in 15.9153ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:41:35.906 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:41:36.005 +06:00 [INF] Request finished in 98.6689ms 200 application/json;charset=utf-8
+2023-05-18 12:41:41.548 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:41:41.736 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:41:41.736 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:41:41.736 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:41:41.753 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:41:41.889 +06:00 [INF] Request finished in 139.0992ms 200 text/html;charset=utf-8
+2023-05-18 12:41:41.889 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:41:41.889 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:41:41.892 +06:00 [INF] Request finished in 3.1588ms 200 application/javascript; charset=utf-8
+2023-05-18 12:41:41.909 +06:00 [INF] Request finished in 19.9543ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:41:41.985 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:41:42.096 +06:00 [INF] Request finished in 111.5118ms 200 application/json;charset=utf-8
+2023-05-18 12:41:45.387 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:41:45.853 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:41:45.854 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:41:45.854 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:41:45.900 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:41:46.196 +06:00 [INF] Request finished in 300.1568ms 200 text/html;charset=utf-8
+2023-05-18 12:41:46.218 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:41:46.219 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:41:46.223 +06:00 [INF] Request finished in 4.0365ms 200 application/javascript; charset=utf-8
+2023-05-18 12:41:46.277 +06:00 [INF] Request finished in 58.1284ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:41:46.412 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:41:46.661 +06:00 [INF] Request finished in 250.6017ms 200 application/json;charset=utf-8
+2023-05-18 12:41:52.034 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 12:41:52.280 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 12:41:52.280 +06:00 [INF] Hosting environment: Development
+2023-05-18 12:41:52.280 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 12:41:52.300 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:41:52.467 +06:00 [INF] Request finished in 169.231ms 200 text/html;charset=utf-8
+2023-05-18 12:41:52.467 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:41:52.467 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:41:52.475 +06:00 [INF] Request finished in 7.1691ms 200 application/javascript; charset=utf-8
+2023-05-18 12:41:52.493 +06:00 [INF] Request finished in 25.3436ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:41:52.619 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:41:52.803 +06:00 [INF] Request finished in 183.8642ms 200 application/json;charset=utf-8
+2023-05-18 12:42:07.592 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 12:42:07.609 +06:00 [INF] Request finished in 17.1091ms 200 text/html;charset=utf-8
+2023-05-18 12:42:07.620 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 12:42:07.621 +06:00 [INF] Request finished in 0.5831ms 200 application/javascript; charset=utf-8
+2023-05-18 12:42:07.621 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 12:42:07.631 +06:00 [INF] Request finished in 9.2335ms 200 text/javascript; charset=UTF-8
+2023-05-18 12:42:07.719 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 12:42:07.723 +06:00 [INF] Request finished in 4.1465ms 200 application/json;charset=utf-8
+2023-05-18 12:42:20.013 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrders  
+2023-05-18 12:42:20.049 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:42:20.071 +06:00 [INF] Route matched with {action = "Get", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:42:20.569 +06:00 [WRN] No type was specified for the decimal column 'Discount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:42:20.570 +06:00 [WRN] No type was specified for the decimal column 'NetAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:42:20.570 +06:00 [WRN] No type was specified for the decimal column 'TotalAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:42:20.570 +06:00 [WRN] No type was specified for the decimal column 'Vat' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:42:20.570 +06:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2023-05-18 12:42:20.599 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:42:21.009 +06:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+2023-05-18 12:42:21.028 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+2023-05-18 12:42:21.030 +06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OrderProcessing.Domain.Entities.Order, OrderProcessing.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-18 12:42:21.105 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api) in 1028.2369ms
+2023-05-18 12:42:21.105 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:42:21.107 +06:00 [INF] HTTP GET /api/Order/GetAllOrders responded 200 in 1083.1464 ms
+2023-05-18 12:42:21.109 +06:00 [INF] Request finished in 1097.0069ms 200 application/json; charset=utf-8
+2023-05-18 12:47:21.885 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/SaveOrder application/json-patch+json 303
+2023-05-18 12:47:21.890 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api)'
+2023-05-18 12:47:21.900 +06:00 [INF] Route matched with {action = "Post", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(OrderProcessing.Api.DTO.OrderCreateDto) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:47:22.007 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:47:22.206 +06:00 [INF] Executed DbCommand (39ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([City], [CustomerName], [Discount], [NetAmount], [OrderDate], [TotalAmount], [Vat])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [OrderId]
+FROM [Orders]
+WHERE @@ROWCOUNT = 1 AND [OrderId] = scope_identity();
+2023-05-18 12:47:22.277 +06:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([OrderId], [Price], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [OrderItemId]
+FROM [OrderItems]
+WHERE @@ROWCOUNT = 1 AND [OrderItemId] = scope_identity();
+2023-05-18 12:47:22.283 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([OrderId], [Price], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [OrderItemId]
+FROM [OrderItems]
+WHERE @@ROWCOUNT = 1 AND [OrderItemId] = scope_identity();
+2023-05-18 12:47:22.286 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([OrderId], [Price], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [OrderItemId]
+FROM [OrderItems]
+WHERE @@ROWCOUNT = 1 AND [OrderItemId] = scope_identity();
+2023-05-18 12:47:22.292 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-05-18 12:47:22.293 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api) in 392.0642ms
+2023-05-18 12:47:22.293 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api)'
+2023-05-18 12:47:22.293 +06:00 [INF] HTTP POST /api/Order/SaveOrder responded 200 in 405.3061 ms
+2023-05-18 12:47:22.294 +06:00 [INF] Request finished in 409.804ms 200 
+2023-05-18 12:47:27.866 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrders  
+2023-05-18 12:47:27.868 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:47:27.868 +06:00 [INF] Route matched with {action = "Get", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:47:27.886 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:47:27.888 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+2023-05-18 12:47:27.990 +06:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:47:27.995 +06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OrderProcessing.Api.DTO.OrderDto, OrderProcessing.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-18 12:47:28.013 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api) in 143.656ms
+2023-05-18 12:47:28.013 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:47:28.013 +06:00 [INF] HTTP GET /api/Order/GetAllOrders responded 200 in 145.5218 ms
+2023-05-18 12:47:28.013 +06:00 [INF] Request finished in 147.1062ms 200 application/json; charset=utf-8
+2023-05-18 12:47:39.613 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=1  
+2023-05-18 12:47:39.614 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:47:39.621 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:47:39.628 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:47:39.645 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:47:39.649 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:47:39.651 +06:00 [INF] Executing ObjectResult, writing value of type 'OrderProcessing.Api.DTO.OrderDto'.
+2023-05-18 12:47:39.651 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 29.6683ms
+2023-05-18 12:47:39.652 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:47:39.652 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=1 responded 200 in 37.5741 ms
+2023-05-18 12:47:39.652 +06:00 [INF] Request finished in 39.1222ms 200 application/json; charset=utf-8
+2023-05-18 12:48:51.058 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/UpdateOrder application/json-patch+json 402
+2023-05-18 12:48:51.059 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Put (OrderProcessing.Api)'
+2023-05-18 12:48:51.065 +06:00 [INF] Route matched with {action = "Put", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Put(OrderProcessing.Api.DTO.OrderUpdateDto) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:48:51.079 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:48:51.082 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:48:51.093 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [City] = @p0, [CustomerName] = @p1, [Discount] = @p2, [NetAmount] = @p3, [OrderDate] = @p4, [TotalAmount] = @p5, [Vat] = @p6
+WHERE [OrderId] = @p7;
+SELECT @@ROWCOUNT;
+2023-05-18 12:48:51.101 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OrderItems] SET [OrderId] = @p0, [Price] = @p1, [ProductName] = @p2, [Quantity] = @p3
+WHERE [OrderItemId] = @p4;
+SELECT @@ROWCOUNT;
+2023-05-18 12:48:51.102 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OrderItems] SET [OrderId] = @p0, [Price] = @p1, [ProductName] = @p2, [Quantity] = @p3
+WHERE [OrderItemId] = @p4;
+SELECT @@ROWCOUNT;
+2023-05-18 12:48:51.105 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OrderItems] SET [OrderId] = @p0, [Price] = @p1, [ProductName] = @p2, [Quantity] = @p3
+WHERE [OrderItemId] = @p4;
+SELECT @@ROWCOUNT;
+2023-05-18 12:48:51.106 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-05-18 12:48:51.106 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Put (OrderProcessing.Api) in 41.397ms
+2023-05-18 12:48:51.107 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Put (OrderProcessing.Api)'
+2023-05-18 12:48:51.107 +06:00 [INF] HTTP POST /api/Order/UpdateOrder responded 200 in 48.1215 ms
+2023-05-18 12:48:51.107 +06:00 [INF] Request finished in 49.2803ms 200 
+2023-05-18 12:48:58.809 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=1  
+2023-05-18 12:48:58.810 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:48:58.811 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:48:58.839 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:48:58.846 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:48:58.848 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:48:58.849 +06:00 [INF] Executing ObjectResult, writing value of type 'OrderProcessing.Api.DTO.OrderDto'.
+2023-05-18 12:48:58.850 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 39.1107ms
+2023-05-18 12:48:58.850 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:48:58.850 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=1 responded 200 in 40.4683 ms
+2023-05-18 12:48:58.850 +06:00 [INF] Request finished in 41.7483ms 200 application/json; charset=utf-8
+2023-05-18 12:52:42.302 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/SaveOrder application/json-patch+json 149
+2023-05-18 12:52:42.303 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api)'
+2023-05-18 12:52:42.303 +06:00 [INF] Route matched with {action = "Post", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(OrderProcessing.Api.DTO.OrderCreateDto) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:52:42.307 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:52:42.316 +06:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([City], [CustomerName], [Discount], [NetAmount], [OrderDate], [TotalAmount], [Vat])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [OrderId]
+FROM [Orders]
+WHERE @@ROWCOUNT = 1 AND [OrderId] = scope_identity();
+2023-05-18 12:52:42.325 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Decimal), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([OrderId], [Price], [ProductName], [Quantity])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [OrderItemId]
+FROM [OrderItems]
+WHERE @@ROWCOUNT = 1 AND [OrderItemId] = scope_identity();
+2023-05-18 12:52:42.327 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-05-18 12:52:42.327 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api) in 23.6969ms
+2023-05-18 12:52:42.327 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Post (OrderProcessing.Api)'
+2023-05-18 12:52:42.327 +06:00 [INF] HTTP POST /api/Order/SaveOrder responded 200 in 25.1247 ms
+2023-05-18 12:52:42.328 +06:00 [INF] Request finished in 26.5712ms 200 
+2023-05-18 12:52:51.769 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=2  
+2023-05-18 12:52:51.771 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:52:51.771 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:52:51.774 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:52:51.779 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:52:51.782 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:52:51.782 +06:00 [INF] Executing ObjectResult, writing value of type 'OrderProcessing.Api.DTO.OrderDto'.
+2023-05-18 12:52:51.783 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 12.0487ms
+2023-05-18 12:52:51.784 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:52:51.784 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=2 responded 200 in 13.9812 ms
+2023-05-18 12:52:51.784 +06:00 [INF] Request finished in 15.1481ms 200 application/json; charset=utf-8
+2023-05-18 12:53:13.084 +06:00 [INF] Request starting HTTP/2.0 POST https://localhost:44339/api/Order/DeleteOrder?id=2  0
+2023-05-18 12:53:13.085 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Delete (OrderProcessing.Api)'
+2023-05-18 12:53:13.088 +06:00 [INF] Route matched with {action = "Delete", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:53:13.092 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:53:13.096 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:53:13.109 +06:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Orders]
+WHERE [OrderId] = @p0;
+SELECT @@ROWCOUNT;
+2023-05-18 12:53:13.113 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-05-18 12:53:13.113 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Delete (OrderProcessing.Api) in 24.6924ms
+2023-05-18 12:53:13.113 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Delete (OrderProcessing.Api)'
+2023-05-18 12:53:13.113 +06:00 [INF] HTTP POST /api/Order/DeleteOrder?id=2 responded 200 in 28.7424 ms
+2023-05-18 12:53:13.114 +06:00 [INF] Request finished in 30.1051ms 200 
+2023-05-18 12:53:19.817 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrderById?id=2  
+2023-05-18 12:53:19.818 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:53:19.818 +06:00 [INF] Route matched with {action = "GetById", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetById(Int32) on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:53:19.820 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:53:19.825 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+WHERE [o].[OrderId] = @__p_0
+2023-05-18 12:53:19.828 +06:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-05-18 12:53:19.847 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api) in 29.0066ms
+2023-05-18 12:53:19.847 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.GetById (OrderProcessing.Api)'
+2023-05-18 12:53:19.847 +06:00 [INF] HTTP GET /api/Order/GetAllOrderById?id=2 responded 404 in 30.1576 ms
+2023-05-18 12:53:19.849 +06:00 [INF] Request finished in 32.708ms 404 application/problem+json; charset=utf-8
+2023-05-18 12:53:25.343 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/api/Order/GetAllOrders  
+2023-05-18 12:53:25.343 +06:00 [INF] Executing endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:53:25.344 +06:00 [INF] Route matched with {action = "Get", controller = "Order"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller OrderProcessing.Api.Controllers.OrderController (OrderProcessing.Api).
+2023-05-18 12:53:25.346 +06:00 [INF] Entity Framework Core 3.1.32 initialized 'OrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=OrderProcessing.Api 
+2023-05-18 12:53:25.347 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderId], [o].[City], [o].[CustomerName], [o].[Discount], [o].[NetAmount], [o].[OrderDate], [o].[TotalAmount], [o].[Vat]
+FROM [Orders] AS [o]
+2023-05-18 12:53:25.349 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[OrderItemId], [o].[OrderId], [o].[Price], [o].[ProductName], [o].[Quantity]
+FROM [OrderItems] AS [o]
+LEFT JOIN [Orders] AS [o0] ON [o].[OrderId] = [o0].[OrderId]
+WHERE [o0].[OrderId] = @__id_0
+2023-05-18 12:53:25.352 +06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[OrderProcessing.Api.DTO.OrderDto, OrderProcessing.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-18 12:53:25.353 +06:00 [INF] Executed action OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api) in 9.2493ms
+2023-05-18 12:53:25.353 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
+2023-05-18 12:53:25.353 +06:00 [INF] HTTP GET /api/Order/GetAllOrders responded 200 in 10.0751 ms
+2023-05-18 12:53:25.354 +06:00 [INF] Request finished in 10.735ms 200 application/json; charset=utf-8

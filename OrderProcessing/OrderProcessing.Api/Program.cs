@@ -49,14 +49,34 @@ namespace OrderProcessing.Api
             //    Log.CloseAndFlush();
             //}
 
-            CreateHostBuilder(args).Build().Run();
+            //CreateHostBuilder(args).Build().Run();
+
+            Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+
+            try
+            {
+                CreateHostBuilder(args).Build().Run();
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+             //Host.CreateDefaultBuilder(args)
+             //    .ConfigureWebHostDefaults(webBuilder =>
+             //    {
+             //        webBuilder.UseStartup<Startup>();
+             //    });
+             Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+                webBuilder.UseSerilog(); // Add this line to use Serilog
+            });
     }
 }

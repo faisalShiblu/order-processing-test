@@ -10,8 +10,8 @@ using OrderProcessing.Infrustructure;
 namespace OrderProcessing.Api.Migrations
 {
     [DbContext(typeof(OrderDbContext))]
-    [Migration("20230517122504_onCascadeDelete")]
-    partial class onCascadeDelete
+    [Migration("20230518064144_againinit")]
+    partial class againinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
