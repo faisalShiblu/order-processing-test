@@ -3,4 +3,6 @@
  -  dot net Core 3.1
  -  Clean Architecture
  -  EF Core 3.1 
+ -  Serilog	
  -  (localdb)\\mssqllocaldb 
+ -  Delete all files from migration folder	
