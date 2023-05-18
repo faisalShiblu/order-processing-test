@@ -13,7 +13,7 @@ namespace OrderProcessing.Api
 {
     public class Program
     {
-       // public static IConfiguration Configuration { get; private set; }
+        // public static IConfiguration Configuration { get; private set; }
         public static void Main(string[] args)
         {
 
@@ -72,11 +72,10 @@ namespace OrderProcessing.Api
              //    {
              //        webBuilder.UseStartup<Startup>();
              //    });
-             Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
+             Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
-                webBuilder.UseSerilog(); // Add this line to use Serilog
+                webBuilder.UseSerilog(); 
             });
     }
 }

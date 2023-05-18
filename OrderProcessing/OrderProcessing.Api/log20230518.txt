@@ -787,3 +787,51 @@ WHERE [o0].[OrderId] = @__id_0
 2023-05-18 12:53:25.353 +06:00 [INF] Executed endpoint 'OrderProcessing.Api.Controllers.OrderController.Get (OrderProcessing.Api)'
 2023-05-18 12:53:25.353 +06:00 [INF] HTTP GET /api/Order/GetAllOrders responded 200 in 10.0751 ms
 2023-05-18 12:53:25.354 +06:00 [INF] Request finished in 10.735ms 200 application/json; charset=utf-8
+2023-05-18 13:19:32.501 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 13:19:32.686 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 13:19:32.686 +06:00 [INF] Hosting environment: Development
+2023-05-18 13:19:32.686 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 13:19:32.705 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 13:19:32.838 +06:00 [INF] Request finished in 134.4988ms 200 text/html;charset=utf-8
+2023-05-18 13:19:32.838 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 13:19:32.838 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 13:19:32.841 +06:00 [INF] Request finished in 3.4183ms 200 application/javascript; charset=utf-8
+2023-05-18 13:19:32.853 +06:00 [INF] Request finished in 15.2497ms 200 text/javascript; charset=UTF-8
+2023-05-18 13:19:33.129 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 13:19:33.221 +06:00 [INF] Request finished in 92.3658ms 200 application/json;charset=utf-8
+2023-05-18 13:19:46.193 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 13:19:46.383 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 13:19:46.383 +06:00 [INF] Hosting environment: Development
+2023-05-18 13:19:46.383 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 13:19:46.401 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 13:19:46.535 +06:00 [INF] Request finished in 136.1054ms 200 text/html;charset=utf-8
+2023-05-18 13:19:46.536 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 13:19:46.539 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 13:19:46.542 +06:00 [INF] Request finished in 3.8487ms 200 application/javascript; charset=utf-8
+2023-05-18 13:19:46.550 +06:00 [INF] Request finished in 14.2067ms 200 text/javascript; charset=UTF-8
+2023-05-18 13:19:46.674 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 13:19:46.766 +06:00 [INF] Request finished in 92.0296ms 200 application/json;charset=utf-8
+2023-05-18 13:19:58.079 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 13:19:58.277 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 13:19:58.277 +06:00 [INF] Hosting environment: Development
+2023-05-18 13:19:58.277 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 13:19:58.299 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 13:19:58.452 +06:00 [INF] Request finished in 156.3159ms 200 text/html;charset=utf-8
+2023-05-18 13:19:58.454 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 13:19:58.454 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 13:19:58.458 +06:00 [INF] Request finished in 3.726ms 200 application/javascript; charset=utf-8
+2023-05-18 13:19:58.469 +06:00 [INF] Request finished in 14.9978ms 200 text/javascript; charset=UTF-8
+2023-05-18 13:19:58.580 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 13:19:58.679 +06:00 [INF] Request finished in 98.6384ms 200 application/json;charset=utf-8
+2023-05-18 13:20:06.826 +06:00 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-18 13:20:07.132 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-18 13:20:07.133 +06:00 [INF] Hosting environment: Development
+2023-05-18 13:20:07.133 +06:00 [INF] Content root path: C:\Users\USER\Documents\GitHub\order-processing-test\OrderProcessing\OrderProcessing.Api
+2023-05-18 13:20:07.165 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/index.html  
+2023-05-18 13:20:07.371 +06:00 [INF] Request finished in 211.1625ms 200 text/html;charset=utf-8
+2023-05-18 13:20:07.374 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_vs/browserLink  
+2023-05-18 13:20:07.377 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/_framework/aspnetcore-browser-refresh.js  
+2023-05-18 13:20:07.382 +06:00 [INF] Request finished in 5.5344ms 200 application/javascript; charset=utf-8
+2023-05-18 13:20:07.400 +06:00 [INF] Request finished in 25.8243ms 200 text/javascript; charset=UTF-8
+2023-05-18 13:20:07.751 +06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44339/swagger/v1/swagger.json  
+2023-05-18 13:20:07.898 +06:00 [INF] Request finished in 147.3663ms 200 application/json;charset=utf-8
