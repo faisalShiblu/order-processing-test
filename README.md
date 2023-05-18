@@ -1,7 +1,8 @@
 # order-processing
  -  VS-2022
  -  dot net Core 3.1
- -  Clean Architecture
+ -  Clean Architecture 
+ -  Repository Pattern
  -  EF Core 3.1 Code first approch 
  -  Serilog	
  -  (localdb)\\mssqllocaldb 
